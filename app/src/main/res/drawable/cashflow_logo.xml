@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,12m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0"/>
+
+    <!-- Arrow and graph combination -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M7,14l3,-3l2,2l5,-5l1,1l-6,6l-2,-2l-2,2z"/>
+
+    <!-- Graph bars -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M7,16h2v2h-2z"/>
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M11,14h2v4h-2z"/>
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M15,12h2v6h-2z"/>
+
+</vector> 

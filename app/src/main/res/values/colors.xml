@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors (60%) -->
+    <color name="colorPrimary">#4CAF91</color>
+    <color name="colorPrimaryDark">#4CAF91</color>
+    <color name="colorPrimaryLight">#81E6D9</color>
+    <color name="colorBackground">#F4F6F8</color>
+
+    <!-- Secondary Colors (30%) -->
+    <color name="colorSecondary">#4CAF91</color>
+    <color name="colorSecondaryDark">#3D8B73</color>
+    <color name="colorSecondaryLight">#81E6D9</color>
+
+    <!-- Accent Colors (10%) -->
+    <color name="colorAccent">#4CAF91</color>
+    <color name="colorAccentDark">#FF8F35</color>
+    <color name="colorAccentLight">#FFB56D</color>
+
+    <!-- Text Colors -->
+    <color name="colorText">#1F2937</color>
+    <color name="colorTextSecondary">#6B7280</color>
+    <color name="colorTextOnPrimary">#FFFFFF</color>
+    <color name="colorTextOnAccent">#FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="colorSuccess">#4CAF91</color>
+    <color name="colorError">#EF4444</color>
+    <color name="colorWarning">#FF9F45</color>
+    <color name="colorInfo">#0c6bd5</color>
+
+    <!-- Card Colors -->
+    <color name="colorCardBackground">#FFFFFF</color>
+    <color name="colorCardElevation">#E5E7EB</color>
+    <color name="colorSurface">#FFFFFF</color>
+
+    <!-- Divider Colors -->
+    <color name="colorDivider">#E5E7EB</color>
+
+    <!-- Transaction Colors -->
+    <color name="colorIncome">#f3fdfd</color>
+    <color name="colorExpense">#EF4444</color>
+
+    <!-- Dark Mode Colors -->
+    <color name="colorBackgroundDark">#1F2937</color>
+    <color name="colorTextDark">#F9FAFB</color>
+    <color name="colorTextSecondaryDark">#D1D5DB</color>
+    <color name="colorCardBackgroundDark">#374151</color>
+    <color name="colorCardElevationDark">#1F2937</color>
+</resources>

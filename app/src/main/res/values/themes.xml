@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PersonalFinanceTracker" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.PersonalFinanceTracker" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand colors -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorTextOnPrimary</item>
+        
+        <!-- Secondary brand colors -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryDark</item>
+        <item name="colorOnSecondary">@color/colorTextOnPrimary</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorCardBackground</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/colorText</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
+        
+        <!-- Card colors -->
+        <item name="cardBackgroundColor">@color/colorCardBackground</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">8dp</item>
+        
+        <!-- Divider color -->
+        <item name="android:divider">@color/colorDivider</item>
+        
+        <!-- Button styles -->
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        
+        <!-- Text input styles -->
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+    </style>
+
+    <style name="Theme.PersonalFinanceTracker.NoActionBar" parent="Theme.PersonalFinanceTracker">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Button style -->
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/colorTextOnPrimary</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <!-- Text input style -->
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/colorTextSecondary</item>
+    </style>
+
+    <!-- Card style -->
+    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/colorCardBackground</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">8dp</item>
+    </style>
+</resources>

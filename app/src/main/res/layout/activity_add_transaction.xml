@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fillViewport="true"
+    tools:context=".activities.AddTransactionActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewAddTransactionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_transaction"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleTransactionType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAddTransactionTitle">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expense"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/income"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/title"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toggleTransactionType">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/amount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:prefixText="$"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/category"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutAmount">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCategory">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textViewDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutNotes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/notes_optional"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:minLines="3"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNotes" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAddUpcomingPayment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_upcoming_payment"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonSave" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

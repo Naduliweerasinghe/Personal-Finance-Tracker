@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="income_categories" />
+    <string-array name="expense_categories" />
+    <string-array name="currencies">
+        <item>USD - US Dollar</item>
+        <item>EUR - Euro</item>
+        <item>GBP - British Pound</item>
+        <item>JPY - Japanese Yen</item>
+        <item>AUD - Australian Dollar</item>
+        <item>CAD - Canadian Dollar</item>
+        <item>CHF - Swiss Franc</item>
+        <item>CNY - Chinese Yuan</item>
+        <item>INR - Indian Rupee</item>
+        <item>LKR - Sri Lankan Rupee</item>
+        <item>SGD - Singapore Dollar</item>
+        <item>NZD - New Zealand Dollar</item>
+        <item>KRW - South Korean Won</item>
+        <item>BRL - Brazilian Real</item>
+        <item>RUB - Russian Ruble</item>
+        <item>ZAR - South African Rand</item>
+        <item>MXN - Mexican Peso</item>
+        <item>SEK - Swedish Krona</item>
+        <item>NOK - Norwegian Krone</item>
+        <item>DKK - Danish Krone</item>
+    </string-array>
+</resources>

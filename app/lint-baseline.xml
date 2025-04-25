@@ -1,0 +1,2182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.2.2" type="baseline" client="gradle" dependencies="false" name="AGP (8.2.2)" variant="all" version="8.2.2">
+
+    <issue
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        errorLine1="        targetSdk = 34"
+        errorLine2="        ~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="15"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="CustomSplashScreen"
+        message="The application should not provide its own launch screen"
+        errorLine1="class SplashActivity : AppCompatActivity() {"
+        errorLine2="      ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/activities/SplashActivity.kt"
+            line="10"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="UseSwitchCompatOrMaterialCode"
+        message="Use `SwitchCompat` from AppCompat or `SwitchMaterial` from Material library"
+        errorLine1="    private lateinit var switchNotifications: Switch"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/fragments/SettingsFragment.kt"
+            line="37"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UseSwitchCompatOrMaterialXml"
+        message="Use `SwitchCompat` from AppCompat or `SwitchMaterial` from Material library"
+        errorLine1="                    &lt;Switch"
+        errorLine2="                    ^">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="99"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="VectorRaster"
+        message="Limit vector icons sizes to 200×200 to keep icon drawing fast; see https://developer.android.com/studio/write/vector-asset-studio#when for more"
+        errorLine1="    android:height=&quot;240dp&quot;"
+        errorLine2="                    ~~~~~">
+        <location
+            file="src/main/res/drawable/logo_cashflow.xml"
+            line="4"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0"
+        errorLine1="    implementation(&quot;androidx.core:core-ktx:1.12.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="48"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0"
+        errorLine1="    implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="49"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0"
+        errorLine1="    implementation(&quot;com.google.android.material:material:1.11.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="50"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1"
+        errorLine1="    implementation(&quot;androidx.constraintlayout:constraintlayout:2.1.4&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="51"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.7.0 is available: 2.8.7"
+        errorLine1="    implementation(&quot;androidx.lifecycle:lifecycle-livedata-ktx:2.7.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="52"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-ktx than 2.7.0 is available: 2.8.7"
+        errorLine1="    implementation(&quot;androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="53"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-fragment-ktx than 2.7.7 is available: 2.8.9"
+        errorLine1="    implementation(&quot;androidx.navigation:navigation-fragment-ktx:2.7.7&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="54"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-ui-ktx than 2.7.7 is available: 2.8.9"
+        errorLine1="    implementation(&quot;androidx.navigation:navigation-ui-ktx:2.7.7&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="55"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.7.0"
+        errorLine1="    implementation(&quot;androidx.room:room-runtime:2.6.1&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="56"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.7.0"
+        errorLine1="    implementation(&quot;androidx.room:room-ktx:2.6.1&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="57"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.7.0"
+        errorLine1="    kapt(&quot;androidx.room:room-compiler:2.6.1&quot;)"
+        errorLine2="          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="58"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1"
+        errorLine1="    androidTestImplementation(&quot;androidx.test.ext:junit:1.1.5&quot;)"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="62"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1"
+        errorLine1="    androidTestImplementation(&quot;androidx.test.espresso:espresso-core:3.5.1&quot;)"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="63"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.android.application than 8.2.0 is available: 8.9.2"
+        errorLine1="agp = &quot;8.2.0&quot;"
+        errorLine2="      ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="2"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 1.9.22"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="3"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0"
+        errorLine1="core-ktx = &quot;1.12.0&quot;"
+        errorLine2="           ~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="4"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1"
+        errorLine1="androidx-test-ext-junit = &quot;1.1.5&quot;"
+        errorLine2="                          ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="6"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1"
+        errorLine1="espresso-core = &quot;3.5.1&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="7"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0"
+        errorLine1="appcompat = &quot;1.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="8"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0"
+        errorLine1="material = &quot;1.11.0&quot;"
+        errorLine2="           ~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1"
+        errorLine1="constraintlayout = &quot;2.1.4&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="10"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-fragment-ktx than 2.7.7 is available: 2.8.9"
+        errorLine1="navigation-fragment = &quot;2.7.7&quot;"
+        errorLine2="                      ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="11"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-ui-ktx than 2.7.7 is available: 2.8.9"
+        errorLine1="navigation-ui = &quot;2.7.7&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="12"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="            notifyDataSetChanged()"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/fragments/AnalyticsFragment.kt"
+            line="182"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="        notifyDataSetChanged()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/adapters/BackupAdapter.kt"
+            line="64"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="        notifyDataSetChanged()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/adapters/CategoryAdapter.kt"
+            line="40"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="        notifyDataSetChanged()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/adapters/RecentTransactionAdapter.kt"
+            line="53"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="        notifyDataSetChanged()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/adapters/TransactionAdapter.kt"
+            line="32"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="        notifyDataSetChanged()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/adapters/TransactionAdapter.kt"
+            line="70"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort."
+        errorLine1="        notifyDataSetChanged()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/adapters/UpcomingPaymentAdapter.kt"
+            line="46"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        message="Very long vector path (904 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        errorLine1="        android:pathData=&quot;M19.14,12.94c0.04,-0.3 0.06,-0.61 0.06,-0.94c0,-0.32 -0.02,-0.64 -0.07,-0.94l2.03,-1.58c0.18,-0.14 0.23,-0.41 0.12,-0.61l-1.92,-3.32c-0.12,-0.22 -0.37,-0.29 -0.59,-0.22l-2.39,0.96c-0.5,-0.38 -1.03,-0.7 -1.62,-0.94L14.4,2.81c-0.04,-0.24 -0.24,-0.41 -0.48,-0.41h-3.84c-0.24,0 -0.43,0.17 -0.47,0.41L9.25,5.35C8.66,5.59 8.12,5.92 7.63,6.29L5.24,5.33c-0.22,-0.08 -0.47,0 -0.59,0.22L2.74,8.87C2.62,9.08 2.66,9.34 2.86,9.48l2.03,1.58C4.84,11.36 4.8,11.69 4.8,12s0.02,0.64 0.07,0.94l-2.03,1.58c-0.18,0.14 -0.23,0.41 -0.12,0.61l1.92,3.32c0.12,0.22 0.37,0.29 0.59,0.22l2.39,-0.96c0.5,0.38 1.03,0.7 1.62,0.94l0.36,2.54c0.05,0.24 0.24,0.41 0.48,0.41h3.84c0.24,0 0.44,-0.17 0.47,-0.41l0.36,-2.54c0.59,-0.24 1.13,-0.56 1.62,-0.94l2.39,0.96c0.22,0.08 0.47,0 0.59,-0.22l1.92,-3.32c0.12,-0.22 0.07,-0.47 -0.12,-0.61L19.14,12.94zM12,15.6c-1.98,0 -3.6,-1.62 -3.6,-3.6s1.62,-3.6 3.6,-3.6s3.6,1.62 3.6,3.6S13.98,15.6 12,15.6z&quot;/>"
+        errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/drawable/ic_settings.xml"
+            line="9"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="KaptUsageInsteadOfKsp"
+        message="This library supports using KSP instead of kapt, which greatly improves performance. Learn more: https://developer.android.com/studio/build/migrate-to-ksp"
+        errorLine1="    kapt(&quot;androidx.room:room-compiler:2.6.1&quot;)"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="58"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="DisableBaselineAlignment"
+        message="Set `android:baselineAligned=&quot;false&quot;` on this element for better performance"
+        errorLine1="                &lt;LinearLayout"
+        errorLine2="                 ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_dashboard.xml"
+            line="102"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_backup_restore.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_budget_settings.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="6"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@android:color/white` with a theme that also paints a background (inferred theme is `@style/Theme_PersonalFinanceTracker_NoActionBar`)"
+        errorLine1="    android:background=&quot;@android:color/white&quot;>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_splash.xml"
+            line="6"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_welcome.xml"
+            line="6"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_analytics.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_dashboard.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transaction.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;@color/colorBackground&quot;>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transactions.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `?attr/selectableItemBackground` with a theme that also paints a background (inferred theme is `@style/Theme.PersonalFinanceTracker`)"
+        errorLine1="    android:background=&quot;?attr/selectableItemBackground&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_category.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.array.income_categories` appears to be unused"
+        errorLine1="    &lt;string-array name=&quot;income_categories&quot; />"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/arrays.xml"
+            line="3"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.array.expense_categories` appears to be unused"
+        errorLine1="    &lt;string-array name=&quot;expense_categories&quot; />"
+        errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/arrays.xml"
+            line="4"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorSecondaryLight` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorSecondaryLight&quot;>#81E6D9&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="12"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorAccentDark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorAccentDark&quot;>#FF8F35&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="16"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorAccentLight` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorAccentLight&quot;>#FFB56D&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="17"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorTextOnAccent` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorTextOnAccent&quot;>#FFFFFF&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="23"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorSuccess` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorSuccess&quot;>#4CAF91&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="26"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorWarning` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorWarning&quot;>#FF9F45&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="28"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorInfo` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorInfo&quot;>#3B82F6&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="29"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorCardElevation` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorCardElevation&quot;>#E5E7EB&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="33"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorBackgroundDark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorBackgroundDark&quot;>#1F2937&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="44"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorTextDark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorTextDark&quot;>#F9FAFB&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="45"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorTextSecondaryDark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorTextSecondaryDark&quot;>#D1D5DB&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="46"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorCardBackgroundDark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorCardBackgroundDark&quot;>#374151&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="47"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.colorCardElevationDark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;colorCardElevationDark&quot;>#1F2937&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="48"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.layout.fragment_transaction` appears to be unused"
+        errorLine1="&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/layout/fragment_transaction.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_income` appears to be unused"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_income.xml"
+            line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.welcome_message` appears to be unused"
+        errorLine1="    &lt;string name=&quot;welcome_message&quot;>Hello, %1$s!&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="5"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.Base_Theme_PersonalFinanceTracker` appears to be unused"
+        errorLine1="    &lt;style name=&quot;Base.Theme.PersonalFinanceTracker&quot; parent=&quot;Theme.Material3.DayNight.NoActionBar&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="4"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.Widget_App_CardView` appears to be unused"
+        errorLine1="    &lt;style name=&quot;Widget.App.CardView&quot; parent=&quot;Widget.MaterialComponents.CardView&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="66"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_budget_settings.xml"
+            line="51"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="67"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="89"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="156"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.androidx.core.ktx`) instead"
+        errorLine1="    implementation(&quot;androidx.core:core-ktx:1.12.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="48"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.appcompat`) instead"
+        errorLine1="    implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="49"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.material`) instead"
+        errorLine1="    implementation(&quot;com.google.android.material:material:1.11.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="50"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.constraintlayout`) instead"
+        errorLine1="    implementation(&quot;androidx.constraintlayout:constraintlayout:2.1.4&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="51"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;androidx.lifecycle:lifecycle-livedata-ktx:2.7.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="52"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="53"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.navigation.fragment`) instead"
+        errorLine1="    implementation(&quot;androidx.navigation:navigation-fragment-ktx:2.7.7&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="54"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.navigation.ui`) instead"
+        errorLine1="    implementation(&quot;androidx.navigation:navigation-ui-ktx:2.7.7&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="55"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;androidx.room:room-runtime:2.6.1&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="56"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;androidx.room:room-ktx:2.6.1&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="57"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    kapt(&quot;androidx.room:room-compiler:2.6.1&quot;)"
+        errorLine2="          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="58"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;com.github.PhilJay:MPAndroidChart:v3.1.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="59"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;com.google.code.gson:gson:2.10.1&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="60"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.junit`) instead"
+        errorLine1="    testImplementation(&quot;junit:junit:4.13.2&quot;)"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="61"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.androidx.junit`) instead"
+        errorLine1="    androidTestImplementation(&quot;androidx.test.ext:junit:1.1.5&quot;)"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="62"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use the existing version catalog reference (`libs.androidx.espresso.core`) instead"
+        errorLine1="    androidTestImplementation(&quot;androidx.test.espresso:espresso-core:3.5.1&quot;)"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="63"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="    &lt;ImageView"
+        errorLine2="     ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_welcome.xml"
+            line="9"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image"
+        errorLine1="    &lt;ImageView"
+        errorLine2="     ~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_category.xml"
+            line="12"
+            column="6"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;"
+        errorLine1="                android:clickable=&quot;true&quot;/>"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="126"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="            &lt;AutoCompleteTextView"
+        errorLine2="             ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="102"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="            &lt;AutoCompleteTextView"
+        errorLine2="             ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="64"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="            &lt;AutoCompleteTextView"
+        errorLine2="             ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="114"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_budget_settings.xml"
+            line="51"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="67"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="89"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="            &lt;AutoCompleteTextView"
+        errorLine2="             ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="110"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`"
+        errorLine1="            &lt;EditText"
+        errorLine2="             ~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="156"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="ConstantLocale"
+        message="Assigning `Locale.getDefault()` to a final static field is suspicious; this code will not work correctly if the user changes locale while the app is running"
+        errorLine1="    private val dateFormat = SimpleDateFormat(&quot;dd MMM yyyy&quot;, Locale.getDefault())"
+        errorLine2="                                                             ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/utils/DateUtils.kt"
+            line="9"
+            column="62"/>
+    </issue>
+
+    <issue
+        id="ConstantLocale"
+        message="Assigning `Locale.getDefault()` to a final static field is suspicious; this code will not work correctly if the user changes locale while the app is running"
+        errorLine1="    private val monthYearFormat = SimpleDateFormat(&quot;MMMM yyyy&quot;, Locale.getDefault())"
+        errorLine2="                                                                ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/utils/DateUtils.kt"
+            line="10"
+            column="65"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="            textViewTotalExpense.text = &quot;No data available&quot;"
+        errorLine2="                                         ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/fragments/AnalyticsFragment.kt"
+            line="119"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        textViewWarningThreshold.text = &quot;Warning at $percentage% of budget&quot;"
+        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/activities/BudgetSettingsActivity.kt"
+            line="96"
+            column="41"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="        textViewWarningThreshold.text = &quot;Warning at $percentage% of budget&quot;"
+        errorLine2="                                         ~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/activities/BudgetSettingsActivity.kt"
+            line="96"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="        textViewWarningThreshold.text = &quot;Warning at $percentage% of budget&quot;"
+        errorLine2="                                                               ~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/activities/BudgetSettingsActivity.kt"
+            line="96"
+            column="64"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        errorLine1="        textViewWelcome.text = &quot;Hello, $userName!&quot;"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/fragments/DashboardFragment.kt"
+            line="67"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="        textViewWelcome.text = &quot;Hello, $userName!&quot;"
+        errorLine2="                                ~~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/fragments/DashboardFragment.kt"
+            line="67"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add Transaction&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Add Transaction&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Expense&quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;Expense&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="41"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Income&quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;Income&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="48"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Title&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Title&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="58"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Amount&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Amount&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="77"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Category&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Category&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="96"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Date&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Date&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="115"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Notes (Optional)&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Notes (Optional)&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="135"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Save&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Save&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="155"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add Upcoming Payment&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Add Upcoming Payment&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_transaction.xml"
+            line="165"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Title&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Title&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="21"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Amount&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Amount&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="40"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Category&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Category&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="59"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Due Date&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Due Date&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="77"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Recurring Payment&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Recurring Payment&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="97"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Recurring Period&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Recurring Period&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="109"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Notes (Optional)&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Notes (Optional)&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="127"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Save&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Save&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_add_upcoming_payment.xml"
+            line="146"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Backup &amp; Restore&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Backup &amp;amp; Restore&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_backup_restore.xml"
+            line="15"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Create Backup&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Create Backup&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_backup_restore.xml"
+            line="28"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Available Backups&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Available Backups&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_backup_restore.xml"
+            line="39"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Select a backup to restore&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Select a backup to restore&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_backup_restore.xml"
+            line="51"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Restore Selected Backup&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Restore Selected Backup&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_backup_restore.xml"
+            line="74"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;No backups available&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;No backups available&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_backup_restore.xml"
+            line="85"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Budget Settings&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Budget Settings&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_budget_settings.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Monthly Budget Amount&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Monthly Budget Amount&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_budget_settings.xml"
+            line="43"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Warning Threshold&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Warning Threshold&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_budget_settings.xml"
+            line="64"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Save Budget&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Save Budget&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_budget_settings.xml"
+            line="100"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Edit Transaction&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Edit Transaction&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Expense&quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;Expense&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="42"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Income&quot;, should use `@string` resource"
+        errorLine1="                android:text=&quot;Income&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="50"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Title&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Title&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="59"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Amount&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Amount&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="81"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Category&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Category&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="102"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Date&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Date&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="123"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Notes (Optional)&quot;, should use `@string` resource"
+        errorLine1="            android:hint=&quot;Notes (Optional)&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="148"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Update&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Update&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="172"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Delete&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Delete&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_edit_transaction.xml"
+            line="184"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Email&quot;, should use `@string` resource"
+        errorLine1="        android:hint=&quot;Email&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_login.xml"
+            line="37"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Password&quot;, should use `@string` resource"
+        errorLine1="        android:hint=&quot;Password&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_login.xml"
+            line="53"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Login&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Login&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_login.xml"
+            line="69"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Don&apos;t have an account? Sign Up&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Don&apos;t have an account? Sign Up&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_login.xml"
+            line="77"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Full Name&quot;, should use `@string` resource"
+        errorLine1="        android:hint=&quot;Full Name&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_signup.xml"
+            line="39"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Email&quot;, should use `@string` resource"
+        errorLine1="        android:hint=&quot;Email&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_signup.xml"
+            line="55"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Password&quot;, should use `@string` resource"
+        errorLine1="        android:hint=&quot;Password&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_signup.xml"
+            line="71"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Sign Up&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Sign Up&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_signup.xml"
+            line="87"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Already have an account? Login&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Already have an account? Login&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_signup.xml"
+            line="95"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Welcome to Personal Finance Tracker&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Welcome to Personal Finance Tracker&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_welcome.xml"
+            line="24"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Track your expenses and income easily. Manage your finances and achieve your financial goals.&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Track your expenses and income easily. Manage your finances and achieve your financial goals.&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_welcome.xml"
+            line="38"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Get Started&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Get Started&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/activity_welcome.xml"
+            line="52"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Dashboard&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Dashboard&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/menu/bottom_navigation_menu.xml"
+            line="6"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Transactions&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Transactions&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/menu/bottom_navigation_menu.xml"
+            line="10"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Analytics&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Analytics&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/menu/bottom_navigation_menu.xml"
+            line="14"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Settings&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Settings&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/menu/bottom_navigation_menu.xml"
+            line="18"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Spending Analysis&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Spending Analysis&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_analytics.xml"
+            line="19"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Total Expenses&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Total Expenses&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_analytics.xml"
+            line="56"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Category Breakdown&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Category Breakdown&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_analytics.xml"
+            line="88"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;No expense data available for this month&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;No expense data available for this month&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_analytics.xml"
+            line="110"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Monthly Budget&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Monthly Budget&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_dashboard.xml"
+            line="46"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Total Balance&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Total Balance&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_dashboard.xml"
+            line="85"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Income&quot;, should use `@string` resource"
+        errorLine1="                            android:text=&quot;Income&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_dashboard.xml"
+            line="118"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Expenses&quot;, should use `@string` resource"
+        errorLine1="                            android:text=&quot;Expenses&quot;"
+        errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_dashboard.xml"
+            line="141"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Upcoming Payments&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Upcoming Payments&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_dashboard.xml"
+            line="163"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Recent Transactions&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Recent Transactions&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_dashboard.xml"
+            line="189"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Settings&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Settings&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="19"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;General Settings&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;General Settings&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="47"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Total Balance&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Total Balance&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="56"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Currency&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Currency&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="73"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Enable Notifications&quot;, should use `@string` resource"
+        errorLine1="                        android:text=&quot;Enable Notifications&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="95"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Save Settings&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Save Settings&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="114"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Budget Settings&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Budget Settings&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="140"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Manage Budget&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Manage Budget&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="151"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Data Management&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Data Management&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="177"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Backup &amp; Restore&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Backup &amp;amp; Restore&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="188"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Account Settings&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Account Settings&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="213"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Logout&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Logout&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_settings.xml"
+            line="223"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Transactions&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Transactions&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transaction.xml"
+            line="14"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;No transactions yet.\nAdd your first transaction!&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;No transactions yet.\nAdd your first transaction!&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transaction.xml"
+            line="38"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add Transaction&quot;, should use `@string` resource"
+        errorLine1="        android:contentDescription=&quot;Add Transaction&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transaction.xml"
+            line="54"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Transactions&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;Transactions&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transactions.xml"
+            line="14"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;All&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;All&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transactions.xml"
+            line="36"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Income&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Income&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transactions.xml"
+            line="43"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Expense&quot;, should use `@string` resource"
+        errorLine1="            android:text=&quot;Expense&quot; />"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transactions.xml"
+            line="50"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;No transactions yet.\nAdd your first transaction!&quot;, should use `@string` resource"
+        errorLine1="        android:text=&quot;No transactions yet.\nAdd your first transaction!&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transactions.xml"
+            line="70"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add Transaction&quot;, should use `@string` resource"
+        errorLine1="        android:contentDescription=&quot;Add Transaction&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_transactions.xml"
+            line="86"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Delete&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Delete&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/menu/menu_edit_transaction.xml"
+            line="7"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="                _transaction.value = result"
+        errorLine2="                                     ~~~~~~">
+        <location
+            file="src/main/java/com/example/personalfinancetracker/viewmodels/TransactionViewModel.kt"
+            line="54"
+            column="38"/>
+    </issue>
+
+</issues>

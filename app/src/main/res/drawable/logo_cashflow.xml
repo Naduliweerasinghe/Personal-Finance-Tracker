@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="240dp"
+    android:viewportWidth="200"
+    android:viewportHeight="240">
+
+    <!-- Bar Chart -->
+    <path
+        android:fillColor="#1a237e"
+        android:pathData="M40,120 L60,120 L60,160 L40,160 Z"/>
+    <path
+        android:fillColor="#1a237e"
+        android:pathData="M70,100 L90,100 L90,160 L70,160 Z"/>
+    <path
+        android:fillColor="#1a237e"
+        android:pathData="M100,80 L120,80 L120,160 L100,160 Z"/>
+    <path
+        android:fillColor="#1a237e"
+        android:pathData="M130,60 L150,60 L150,160 L130,160 Z"/>
+
+    <!-- Arrow -->
+    <path
+        android:fillColor="#1a237e"
+        android:pathData="M140,40 L170,60 L140,80 Z"/>
+
+    <!-- Person -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M120,140 C140,140 160,160 160,180 C120,200 80,180 80,160 C80,140 100,140 120,140 Z"/>
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M120,130 C110,130 100,120 100,110 C100,100 110,90 120,90 C130,90 140,100 140,110 C140,120 130,130 120,130 Z"/>
+</vector> 
