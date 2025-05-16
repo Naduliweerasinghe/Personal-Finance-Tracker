@@ -11,7 +11,10 @@ import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-class UpcomingPaymentAdapter : RecyclerView.Adapter<UpcomingPaymentAdapter.UpcomingPaymentViewHolder>() {
+class UpcomingPaymentAdapter(
+    private val onPaymentDue: (UpcomingPayment) -> Unit,
+    private val onPaymentClick: (UpcomingPayment) -> Unit
+) : RecyclerView.Adapter<UpcomingPaymentAdapter.UpcomingPaymentViewHolder>() {
 
     private var payments: List<UpcomingPayment> = emptyList()
     private val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
@@ -21,6 +24,15 @@ class UpcomingPaymentAdapter : RecyclerView.Adapter<UpcomingPaymentAdapter.Upcom
         private val titleTextView: TextView = itemView.findViewById(R.id.textViewPaymentTitle)
         private val amountTextView: TextView = itemView.findViewById(R.id.textViewPaymentAmount)
         private val dateTextView: TextView = itemView.findViewById(R.id.textViewPaymentDate)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onPaymentClick(payments[position])
+                }
+            }
+        }
 
         fun bind(payment: UpcomingPayment) {
             titleTextView.text = payment.title
@@ -36,7 +48,13 @@ class UpcomingPaymentAdapter : RecyclerView.Adapter<UpcomingPaymentAdapter.Upcom
     }
 
     override fun onBindViewHolder(holder: UpcomingPaymentViewHolder, position: Int) {
-        holder.bind(payments[position])
+        val payment = payments[position]
+        holder.bind(payment)
+
+        // Check if payment is due
+        if (isPaymentDue(payment.dueDate)) {
+            onPaymentDue(payment)
+        }
     }
 
     override fun getItemCount(): Int = payments.size
@@ -45,4 +63,23 @@ class UpcomingPaymentAdapter : RecyclerView.Adapter<UpcomingPaymentAdapter.Upcom
         payments = newPayments
         notifyDataSetChanged()
     }
-} 
+
+    private fun isPaymentDue(dueDate: Date): Boolean {
+        val today = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.time
+
+        val paymentDate = Calendar.getInstance().apply {
+            time = dueDate
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.time
+
+        return paymentDate <= today
+    }
+}

@@ -1,38 +1,25 @@
 package com.example.personalfinancetracker.activities
 
-import android.app.AlertDialog
 import android.os.Bundle
-import android.view.View
+import android.view.MenuItem
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.Toast
-import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.personalfinancetracker.R
-import com.example.personalfinancetracker.adapters.BackupAdapter
 import com.example.personalfinancetracker.databinding.ActivityBackupRestoreBinding
-import com.example.personalfinancetracker.models.BackupItem
-import com.example.personalfinancetracker.models.Transaction
-import com.example.personalfinancetracker.utils.BackupHelper
-import com.example.personalfinancetracker.utils.PreferencesManager
-import com.example.personalfinancetracker.viewmodels.TransactionViewModel
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import kotlinx.coroutines.flow.collectLatest
+import com.example.personalfinancetracker.utils.BackupManager
 import kotlinx.coroutines.launch
-import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
 class BackupRestoreActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityBackupRestoreBinding
-    private lateinit var backupHelper: BackupHelper
-    private lateinit var preferencesManager: PreferencesManager
-    private val transactionViewModel: TransactionViewModel by viewModels()
-    private lateinit var backupAdapter: BackupAdapter
-    private var selectedBackup: BackupItem? = null
-    private val gson = Gson()
+    private lateinit var backupManager: BackupManager
+    private lateinit var backupAdapter: ArrayAdapter<String>
+    private val dateFormat = SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,155 +30,157 @@ class BackupRestoreActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         title = "Backup & Restore"
 
-        backupHelper = BackupHelper(this)
-        preferencesManager = PreferencesManager(this)
-
-        setupRecyclerView()
-        setupClickListeners()
+        backupManager = BackupManager(this)
+        setupViews()
         loadBackups()
     }
 
-    private fun setupRecyclerView() {
-        backupAdapter = BackupAdapter { backup ->
-            selectedBackup = backup
-            binding.buttonRestore.isEnabled = true
-        }
-        
-        binding.recyclerViewBackups.apply {
-            layoutManager = LinearLayoutManager(this@BackupRestoreActivity)
-            adapter = backupAdapter
-        }
-    }
-
-    private fun setupClickListeners() {
-        binding.buttonBackup.setOnClickListener {
+    private fun setupViews() {
+        binding.buttonCreateBackup.setOnClickListener {
             createBackup()
         }
 
-        binding.buttonRestore.setOnClickListener {
-            selectedBackup?.let { backup ->
-                showRestoreConfirmationDialog(backup)
+        binding.buttonRestoreBackup.setOnClickListener {
+            val selectedPosition = binding.listViewBackups.checkedItemPosition
+            if (selectedPosition != ListView.INVALID_POSITION) {
+                val selectedBackup = backupAdapter.getItem(selectedPosition)
+                if (selectedBackup != null) {
+                    // Extract the filename from the formatted string
+                    val fileName = selectedBackup.substringAfterLast(" - ")
+                    showRestoreConfirmationDialog(fileName)
+                }
+            } else {
+                Toast.makeText(this, "Please select a backup to restore", Toast.LENGTH_SHORT).show()
             }
         }
-    }
 
-    private fun createBackup() {
-        try {
-            lifecycleScope.launch {
-                transactionViewModel.getAllTransactions().collectLatest { transactions ->
-                    if (transactions.isEmpty()) {
-                        Toast.makeText(this@BackupRestoreActivity, "No transactions to backup", Toast.LENGTH_SHORT).show()
-                        return@collectLatest
-                    }
+        binding.listViewBackups.setOnItemClickListener { _, _, position, _ ->
+            binding.buttonRestoreBackup.isEnabled = true
+        }
 
-                    // Create backup file with timestamp
-                    val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-                    val backupFileName = "backup_$timestamp.json"
-                    
-                    // Create backup directory if it doesn't exist
-                    val backupDir = File(filesDir, "backups")
-                    if (!backupDir.exists()) {
-                        backupDir.mkdirs()
-                    }
-
-                    // Create backup file
-                    val backupFile = File(backupDir, backupFileName)
-                    
-                    // Convert transactions to JSON and save to file
-                    val backupData = gson.toJson(transactions)
-                    backupFile.writeText(backupData)
-
-                    Toast.makeText(this@BackupRestoreActivity, "Backup created successfully", Toast.LENGTH_SHORT).show()
-                    loadBackups()
-                }
+        binding.listViewBackups.setOnItemLongClickListener { _, _, position, _ ->
+            val backup = backupAdapter.getItem(position)
+            if (backup != null) {
+                // Extract the filename from the formatted string
+                val fileName = backup.substringAfterLast(" - ")
+                showDeleteConfirmationDialog(fileName)
             }
-        } catch (e: Exception) {
-            Toast.makeText(this, "Failed to create backup: ${e.message}", Toast.LENGTH_SHORT).show()
+            true
         }
     }
 
     private fun loadBackups() {
-        try {
-            val backupDir = File(filesDir, "backups")
-            if (!backupDir.exists()) {
-                backupDir.mkdirs()
-                return
-            }
+        val backups = backupManager.getAvailableBackups()
+        val formattedBackups = backups.map { fileName ->
+            val date = backupManager.getBackupDate(fileName)
+            "${dateFormat.format(date)} - $fileName"
+        }
 
-            val backups = backupDir.listFiles { file ->
-                file.name.startsWith("backup_") && file.name.endsWith(".json")
-            }?.map { file ->
-                BackupItem(
-                    fileName = file.name,
-                    date = backupHelper.getBackupDate(file.name)
+        backupAdapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_list_item_single_choice,
+            formattedBackups
+        )
+        binding.listViewBackups.adapter = backupAdapter
+        
+        // Disable restore button if no backups are available
+        binding.buttonRestoreBackup.isEnabled = backups.isNotEmpty()
+    }
+
+    private fun createBackup() {
+        lifecycleScope.launch {
+            try {
+                val result = backupManager.createBackup()
+                result.fold(
+                    onSuccess = { fileName ->
+                        Toast.makeText(
+                            this@BackupRestoreActivity,
+                            "Backup created successfully: $fileName",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        loadBackups()
+                    },
+                    onFailure = { error ->
+                        Toast.makeText(
+                            this@BackupRestoreActivity,
+                            "Failed to create backup: ${error.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 )
-            }?.sortedByDescending { it.date } ?: emptyList()
-
-            backupAdapter.updateBackups(backups)
-            
-            if (backups.isEmpty()) {
-                binding.textViewEmptyBackups.visibility = View.VISIBLE
-                binding.recyclerViewBackups.visibility = View.GONE
-            } else {
-                binding.textViewEmptyBackups.visibility = View.GONE
-                binding.recyclerViewBackups.visibility = View.VISIBLE
+            } catch (e: Exception) {
+                Toast.makeText(
+                    this@BackupRestoreActivity,
+                    "Error creating backup: ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-        } catch (e: Exception) {
-            Toast.makeText(this, "Failed to load backups: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun showRestoreConfirmationDialog(backup: BackupItem) {
+    private fun showRestoreConfirmationDialog(backupFileName: String) {
         AlertDialog.Builder(this)
             .setTitle("Restore Backup")
-            .setMessage("Are you sure you want to restore this backup? This will replace all current transactions.")
+            .setMessage("Are you sure you want to restore this backup? This will replace all current data.")
             .setPositiveButton("Restore") { _, _ ->
-                restoreBackup(backup)
+                restoreBackup(backupFileName)
             }
             .setNegativeButton("Cancel", null)
             .show()
     }
 
-    private fun restoreBackup(backup: BackupItem) {
-        try {
-            val backupFile = File(filesDir, "backups/${backup.fileName}")
-            if (!backupFile.exists()) {
-                Toast.makeText(this, "Backup file not found", Toast.LENGTH_SHORT).show()
-                return
-            }
-
-            lifecycleScope.launch {
-                try {
-                    // Read backup data
-                    val backupData = backupFile.readText()
-                    val type = object : TypeToken<List<Transaction>>() {}.type
-                    val transactions: List<Transaction> = gson.fromJson(backupData, type)
-
-                    // Clear all existing transactions first
-                    transactionViewModel.getAllTransactions().collectLatest { existingTransactions ->
-                        existingTransactions.forEach { transaction ->
-                            transactionViewModel.delete(transaction)
-                        }
-
-                        // Insert restored transactions
-                        transactions.forEach { transaction ->
-                            transactionViewModel.insert(transaction)
-                        }
-
-                        Toast.makeText(this@BackupRestoreActivity, "Backup restored successfully", Toast.LENGTH_SHORT).show()
-                        finish()
-                    }
-                } catch (e: Exception) {
-                    Toast.makeText(this@BackupRestoreActivity, "Failed to restore backup: ${e.message}", Toast.LENGTH_SHORT).show()
+    private fun showDeleteConfirmationDialog(backupFileName: String) {
+        AlertDialog.Builder(this)
+            .setTitle("Delete Backup")
+            .setMessage("Are you sure you want to delete this backup?")
+            .setPositiveButton("Delete") { _, _ ->
+                if (backupManager.deleteBackup(backupFileName)) {
+                    Toast.makeText(this, "Backup deleted successfully", Toast.LENGTH_SHORT).show()
+                    loadBackups()
+                } else {
+                    Toast.makeText(this, "Failed to delete backup", Toast.LENGTH_SHORT).show()
                 }
             }
-        } catch (e: Exception) {
-            Toast.makeText(this, "Failed to restore backup: ${e.message}", Toast.LENGTH_SHORT).show()
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+
+    private fun restoreBackup(backupFileName: String) {
+        lifecycleScope.launch {
+            try {
+                val result = backupManager.restoreBackup(backupFileName)
+                result.fold(
+                    onSuccess = {
+                        Toast.makeText(
+                            this@BackupRestoreActivity,
+                            "Backup restored successfully",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        finish()
+                    },
+                    onFailure = { error ->
+                        Toast.makeText(
+                            this@BackupRestoreActivity,
+                            "Failed to restore backup: ${error.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                )
+            } catch (e: Exception) {
+                Toast.makeText(
+                    this@BackupRestoreActivity,
+                    "Error restoring backup: ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        finish()
-        return true
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

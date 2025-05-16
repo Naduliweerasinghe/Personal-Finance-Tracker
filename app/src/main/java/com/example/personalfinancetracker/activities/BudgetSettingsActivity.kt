@@ -1,131 +1,71 @@
 package com.example.personalfinancetracker.activities
 
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
-import android.widget.SeekBar
-import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.personalfinancetracker.R
-import com.example.personalfinancetracker.utils.DateUtils
-import java.text.NumberFormat
-import java.util.Currency
-import java.util.Date
-import java.util.Locale
+import com.example.personalfinancetracker.databinding.ActivityBudgetSettingsBinding
+import com.example.personalfinancetracker.viewmodels.BudgetViewModel
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 class BudgetSettingsActivity : AppCompatActivity() {
-
-    private lateinit var textViewMonthYear: TextView
-    private lateinit var editTextBudgetAmount: EditText
-    private lateinit var seekBarWarningThreshold: SeekBar
-    private lateinit var textViewWarningThreshold: TextView
-    private lateinit var buttonSaveBudget: Button
-    private var warningThreshold: Double = 0.8 // Default 80%
+    private lateinit var binding: ActivityBudgetSettingsBinding
+    private val budgetViewModel: BudgetViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_budget_settings)
+        binding = ActivityBudgetSettingsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Enable back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         title = "Budget Settings"
 
-        initViews()
-        setupListeners()
+        setupViews()
+        loadCurrentBudget()
     }
 
-    private fun initViews() {
-        textViewMonthYear = findViewById(R.id.textViewMonthYear)
-        editTextBudgetAmount = findViewById(R.id.editTextBudgetAmount)
-        seekBarWarningThreshold = findViewById(R.id.seekBarWarningThreshold)
-        textViewWarningThreshold = findViewById(R.id.textViewWarningThreshold)
-        buttonSaveBudget = findViewById(R.id.buttonSaveBudget)
-
-        // Set current month and year
-        val currentDate = Date()
-        textViewMonthYear.text = DateUtils.formatMonthYear(currentDate)
-
-        // Set default values
-        seekBarWarningThreshold.progress = 80
-        updateWarningThresholdText()
-    }
-
-    private fun setupListeners() {
-        seekBarWarningThreshold.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                warningThreshold = progress / 100.0
-                updateWarningThresholdText()
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-        })
-
-        buttonSaveBudget.setOnClickListener {
-            if (validateInputs()) {
-                saveBudget()
+    private fun setupViews() {
+        binding.buttonSaveBudget.setOnClickListener {
+            val amountText = binding.editTextBudgetAmount.text.toString()
+            if (amountText.isNotEmpty()) {
+                val amount = amountText.toDoubleOrNull()
+                if (amount != null && amount > 0) {
+                    lifecycleScope.launch {
+                        val currentBudget = budgetViewModel.getCurrentBudget().first()
+                        if (currentBudget != null) {
+                            budgetViewModel.updateBudget(amount)
+                        } else {
+                            budgetViewModel.setBudget(amount)
+                        }
+                        Toast.makeText(this@BudgetSettingsActivity, "Budget saved successfully", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                } else {
+                    Toast.makeText(this, "Please enter a valid amount", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Please enter a budget amount", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun updateWarningThresholdText() {
-        val percentage = (warningThreshold * 100).toInt()
-        textViewWarningThreshold.text = "Warning at $percentage% of budget"
+    private fun loadCurrentBudget() {
+        lifecycleScope.launch {
+            val currentBudget = budgetViewModel.getCurrentBudget().first()
+            currentBudget?.let {
+                binding.editTextBudgetAmount.setText(it.amount.toString())
+            }
+        }
     }
 
-    private fun validateInputs(): Boolean {
-        if (editTextBudgetAmount.text.toString().trim().isEmpty()) {
-            editTextBudgetAmount.error = "Budget amount is required"
-            return false
-        }
-
-        try {
-            val amount = editTextBudgetAmount.text.toString().toDouble()
-            if (amount <= 0) {
-                editTextBudgetAmount.error = "Budget must be greater than zero"
-                return false
-            }
-        } catch (e: NumberFormatException) {
-            editTextBudgetAmount.error = "Invalid amount"
-            return false
-        }
-
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
         return true
-    }
-
-    private fun saveBudget() {
-        try {
-            val amount = editTextBudgetAmount.text.toString().toDouble()
-            
-            // Save to SharedPreferences
-            val sharedPreferences = getSharedPreferences("budget_prefs", MODE_PRIVATE)
-            sharedPreferences.edit().apply {
-                putFloat("budget_amount", amount.toFloat())
-                apply()
-            }
-
-            val numberFormat = NumberFormat.getCurrencyInstance(Locale.getDefault())
-            numberFormat.currency = Currency.getInstance("USD")
-
-            Toast.makeText(
-                this,
-                "Budget set to ${numberFormat.format(amount)}",
-                Toast.LENGTH_SHORT
-            ).show()
-
-            finish()
-        } catch (e: Exception) {
-            Toast.makeText(this, "Error saving budget", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
-            finish()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
     }
 }

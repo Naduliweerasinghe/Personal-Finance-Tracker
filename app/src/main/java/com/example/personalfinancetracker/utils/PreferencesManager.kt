@@ -159,4 +159,16 @@ class PreferencesManager(context: Context) {
             clear()
         }
     }
+
+    fun deleteUpcomingPayment(paymentId: String) {
+        val currentPayments = getUpcomingPayments().toMutableList()
+        currentPayments.removeIf { it.id == paymentId }
+        saveUpcomingPayments(currentPayments)
+    }
+
+    fun addUpcomingPayment(payment: UpcomingPayment) {
+        val currentPayments = getUpcomingPayments().toMutableList()
+        currentPayments.add(payment)
+        saveUpcomingPayments(currentPayments)
+    }
 }

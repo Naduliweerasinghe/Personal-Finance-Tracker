@@ -58,6 +58,7 @@
         <activity
             android:name=".activities.BudgetSettingsActivity"
             android:exported="false"
+            android:label="Budget Settings"
             android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.BackupRestoreActivity"

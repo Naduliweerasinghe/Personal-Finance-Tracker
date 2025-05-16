@@ -110,7 +110,7 @@
             <AutoCompleteTextView
                 android:id="@+id/spinnerCategory"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="63dp"
                 android:inputType="none"
                 android:textColor="@color/colorText" />
         </com.google.android.material.textfield.TextInputLayout>

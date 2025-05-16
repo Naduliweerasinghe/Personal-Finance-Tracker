@@ -112,12 +112,7 @@ class SettingsFragment : Fragment() {
         }
 
         buttonBudgetSettings.setOnClickListener {
-            // Simply navigate to BudgetSettingsActivity without any SharedPreferences
-            try {
-                startActivity(Intent(requireContext(), BudgetSettingsActivity::class.java))
-            } catch (e: Exception) {
-                Toast.makeText(requireContext(), "Unable to open budget settings", Toast.LENGTH_SHORT).show()
-            }
+            startActivity(Intent(requireContext(), BudgetSettingsActivity::class.java))
         }
 
         buttonBackupRestore.setOnClickListener {

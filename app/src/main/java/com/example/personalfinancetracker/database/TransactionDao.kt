@@ -41,4 +41,7 @@ interface TransactionDao {
 
     @Query("SELECT SUM(CASE WHEN isExpense = 1 THEN -amount ELSE amount END) FROM transactions")
     fun getTotalBalance(): Flow<Double>
+
+    @Query("DELETE FROM transactions")
+    suspend fun deleteAllTransactions()
 } 

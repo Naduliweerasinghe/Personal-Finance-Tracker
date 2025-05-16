@@ -14,4 +14,4 @@ data class UpcomingPayment(
     val isRecurring: Boolean = false,
     val recurringPeriod: String = "", // "monthly", "weekly", etc.
     val notes: String = ""
-) : Parcelable 
+) : Parcelable

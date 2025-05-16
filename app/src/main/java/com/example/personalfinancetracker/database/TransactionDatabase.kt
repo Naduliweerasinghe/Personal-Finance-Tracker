@@ -8,10 +8,11 @@ import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [TransactionEntity::class], version = 1, exportSchema = false)
+@Database(entities = [TransactionEntity::class, Budget::class], version = 2, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class TransactionDatabase : RoomDatabase() {
     abstract fun transactionDao(): TransactionDao
+    abstract fun budgetDao(): BudgetDao
 
     companion object {
         @Volatile
@@ -19,9 +20,15 @@ abstract class TransactionDatabase : RoomDatabase() {
 
         private val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(db: SupportSQLiteDatabase) {
-                // Add any necessary database migrations here
-                // This is an example of how to add a new column
-                // db.execSQL("ALTER TABLE transactions ADD COLUMN new_column TEXT")
+                // Create budgets table
+                db.execSQL("""
+                    CREATE TABLE IF NOT EXISTS budgets (
+                        id INTEGER PRIMARY KEY NOT NULL,
+                        amount REAL NOT NULL,
+                        month INTEGER NOT NULL,
+                        year INTEGER NOT NULL
+                    )
+                """)
             }
         }
 
